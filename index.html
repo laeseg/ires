@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRES UNIKIN | Bibliothèque Numérique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">IRES UNIKIN</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="revue.html">Revues</a></li>
+                    <li><a href="ires.html">IRES</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#subjects">Sujets</a></li>
+                    <li><a href="#publisher">Éditeurs</a></li>
+                    <li class="dropdown">
+                        <span class="dropdown-toggle">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </span>
+                        <ul class="dropdown-menu">
+                            <li><a href="#about">À propos</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="connection.html">Se connecter</a></li>
+                            <li><a href="#register">S'inscrire</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="images/library-bg.jpg" alt="Bibliothèque 1" class="hero-image active">
+            <img src="images/ires.jpg" alt="Bibliothèque 2" class="hero-image">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>
+                    <span class="typing-text">Accédez</span>
+                    <span class="fade-in-text">à la recherche académique</span>
+                </h1>
+                <div class="search-wrapper">
+                    <form class="search-form">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" placeholder="Rechercher des articles, chapitres, images et plus...">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="search-examples">
+                        Exemples: article, revue, thèse, auteur...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured">
+            <div class="container">
+                <h2>Collections en vedette</h2>
+                <div class="featured-grid">
+                    <article class="featured-item">
+                        <a href="collection.html" class="featured-image">
+                            <img src="images/ires.jpg" alt="Syndicats en Europe">
+                        </a>
+                        <div class="featured-content">
+                            <span class="collection-tag">CGT-FO</span>
+                            <h3>Les syndicats en action en Europe</h3>
+                            <p class="collection-subtitle">Études de cas en Allemagne, Belgique, Danemark, Espagne, Italie et au niveau européen</p>
+                            <div class="collection-meta">
+                                <span class="date"><i class="fas fa-calendar"></i> décembre 2024</span>
+                                <span class="authors"><i class="fas fa-users"></i> Bianca LUNA FABRIS, Kurt VANDAELE</span>
+                            </div>
+                            <p class="description">Dans un contexte marqué par des défis sans précédent, les syndicats...</p>
+                            <div class="collection-actions">
+                                <a href="collection.html" class="btn-download"><i class="fas fa-file-download"></i> Télécharger</a>
+                                <a href="collection.html" class="btn-synthesis"><i class="fas fa-file-alt"></i> Synthèse</a>
+                                <a href="collection.html" class="btn-more"><i class="fas fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-item">
+                        <a href="collection.html" class="featured-image">
+                            <img src="images/iresa.jpg" alt="Innovation sociale">
+                        </a>
+                        <div class="featured-content">
+                            <span class="collection-tag">Recherche</span>
+                            <h3>Innovation sociale et travail</h3>
+                            <p class="collection-subtitle">Nouvelles approches du travail collaboratif</p>
+                            <div class="collection-meta">
+                                <span class="date"><i class="fas fa-calendar"></i> novembre 2024</span>
+                                <span class="authors"><i class="fas fa-users"></i> Marie DUPONT, Jean MARTIN</span>
+                            </div>
+                            <p class="description">Analyse des nouvelles formes de collaboration et d'innovation...</p>
+                            <div class="collection-actions">
+                                <a href="collection.html" class="btn-download"><i class="fas fa-file-download"></i> Télécharger</a>
+                                <a href="collection.html" class="btn-synthesis"><i class="fas fa-file-alt"></i> Synthèse</a>
+                                <a href="collection.html" class="btn-more"><i class="fas fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-item">
+                        <a href="collection.html" class="featured-image">
+                            <img src="images/ires.jpg" alt="Économie durable">
+                        </a>
+                        <div class="featured-content">
+                            <span class="collection-tag">Économie</span>
+                            <h3>Transition écologique et emploi</h3>
+                            <p class="collection-subtitle">Impact sur le marché du travail et adaptations</p>
+                            <div class="collection-meta">
+                                <span class="date"><i class="fas fa-calendar"></i> octobre 2024</span>
+                                <span class="authors"><i class="fas fa-users"></i> Sophie LEBLANC, Paul ROBERT</span>
+                            </div>
+                            <p class="description">Étude des transformations du marché de l'emploi face aux enjeux...</p>
+                            <div class="collection-actions">
+                                <a href="collection.html" class="btn-download"><i class="fas fa-file-download"></i> Télécharger</a>
+                                <a href="collection.html" class="btn-synthesis"><i class="fas fa-file-alt"></i> Synthèse</a>
+                                <a href="collection.html" class="btn-more"><i class="fas fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="subjects">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explorer par discipline</h2>
+                    <p class="section-description">Découvrez notre vaste collection de ressources académiques par domaine d'étude</p>
+                </div>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="subject-content">
+                            <h3>Sciences Naturelles</h3>
+                            <ul>
+                                <li><a href="#"><span class="subject-name">Biologie</span> <span class="count">(1.2k)</span></a></li>
+                                <li><a href="#"><span class="subject-name">Physique</span> <span class="count">(890)</span></a></li>
+                                <li><a href="#"><span class="subject-name">Chimie</span> <span class="count">(750)</span></a></li>
+                                <li><a href="#" class="more-link">Voir plus <i class="fas fa-arrow-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="subject-content">
+                            <h3>Sciences Humaines</h3>
+                            <ul>
+                                <li><a href="#"><span class="subject-name">Histoire</span> <span class="count">(980)</span></a></li>
+                                <li><a href="#"><span class="subject-name">Philosophie</span> <span class="count">(645)</span></a></li>
+                                <li><a href="#"><span class="subject-name">Littérature</span> <span class="count">(820)</span></a></li>
+                                <li><a href="#" class="more-link">Voir plus <i class="fas fa-arrow-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="subject-content">
+                            <h3>Sciences Sociales</h3>
+                            <ul>
+                                <li><a href="#"><span class="subject-name">Économie</span> <span class="count">(1.1k)</span></a></li>
+                                <li><a href="#"><span class="subject-name">Sociologie</span> <span class="count">(730)</span></a></li>
+                                <li><a href="#"><span class="subject-name">Psychologie</span> <span class="count">(920)</span></a></li>
+                                <li><a href="#" class="more-link">Voir plus <i class="fas fa-arrow-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="subject-content">
+                            <h3>Technologies</h3>
+                            <ul>
+                                <li><a href="#"><span class="subject-name">Informatique</span> <span class="count">(1.5k)</span></a></li>
+                                <li><a href="#"><span class="subject-name">Intelligence Artificielle</span> <span class="count">(680)</span></a></li>
+                                <li><a href="#"><span class="subject-name">Robotique</span> <span class="count">(450)</span></a></li>
+                                <li><a href="#" class="more-link">Voir plus <i class="fas fa-arrow-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tools">
+            <div class="container">
+                <h2>Outils de recherche</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <i class="fas fa-book-reader"></i>
+                        <h3>Lecture en ligne</h3>
+                        <p>Accédez à nos documents directement depuis votre navigateur</p>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-download"></i>
+                        <h3>Téléchargement PDF</h3>
+                        <p>Téléchargez les documents pour une lecture hors ligne</p>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-quote-right"></i>
+                        <h3>Citation</h3>
+                        <p>Générez automatiquement des citations bibliographiques</p>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-share-alt"></i>
+                        <h3>Partage</h3>
+                        <p>Partagez facilement vos découvertes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent">
+            <div class="container">
+                <h2>Publications récentes</h2>
+                <div class="articles-list">
+                    <article class="article-item">
+                        <h3><a href="#">Titre de l'article scientifique récent</a></h3>
+                        <div class="article-meta">
+                            <span class="authors">Auteur(s): Jean Dupont, Marie Martin</span>
+                            <span class="journal">Journal of Science</span>
+                            <span class="date">2025</span>
+                        </div>
+                        <p class="abstract">Résumé de l'article présentant les points principaux de la recherche et ses conclusions...</p>
+                        <div class="article-actions">
+                            <button class="btn-primary">Lire</button>
+                            <button class="btn-secondary">Télécharger PDF</button>
+                        </div>
+                    </article>
+                    <!-- Répéter pour plusieurs articles -->
+                </div>
+                <div class="load-more">
+                    <button class="btn-outline">Voir plus d'articles</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Équipe</a></li>
+                        <li><a href="#">Partenaires</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Aide</h4>
+                    <ul>
+                        <li><a href="#">Guide d'utilisation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Accessibilité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IRES UNIKIN. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Connexion</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Se connecter</button>
+            </form>
+            <p class="text-center">
+                <a href="#forgot-password">Mot de passe oublié ?</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
