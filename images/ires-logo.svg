@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <g>
+    <rect width="500" height="500" fill="#1a4c9e"/>
+    <path d="M100,100 h300 v300 h-300 z" fill="#1a4c9e"/>
+    <path d="M150,150 C200,100 300,100 350,150 C400,200 400,300 350,350 C300,400 200,400 150,350 C100,300 100,200 150,150" fill="white"/>
+    <text x="250" y="450" font-family="serif" font-size="100" text-anchor="middle" fill="white">IRES</text>
+  </g>
+</svg>
