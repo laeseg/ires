@@ -13,22 +13,45 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo">IRES UNIKIN</a>
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpeg" alt="IRES Logo" class="logo-image">
+            </a>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="revue.html">Revues</a></li>
-                    <li><a href="ires.html">IRES</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#about">À propos</a></li>
                     <li class="dropdown">
-                        <span class="dropdown-toggle">Plus</span>
+                        <a href="#" class="dropdown-toggle">
+                            Contributeurs
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fas fa-info-circle"></i> À propos</a></li>
-                            <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
-                            <li><a href="#"><i class="fas fa-sign-in-alt"></i> Se connecter</a></li>
-                            <li><a href="#"><i class="fas fa-user-plus"></i> S'inscrire</a></li>
+                            <li><a href="#editeurs">Éditeurs</a></li>
+                            <li><a href="#auteurs">Auteurs</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown icon-dropdown">
+                        <a href="#" class="dropdown-toggle nav-icon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#profile"><i class="fas fa-user-circle"></i> Profile</a></li>
+                            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+                            <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown icon-dropdown">
+                        <a href="#" class="dropdown-toggle nav-icon">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#settings"><i class="fas fa-sliders-h"></i> Paramètres</a></li>
+                            <li><a href="#help"><i class="fas fa-question-circle"></i> Aide</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -96,7 +119,7 @@
             </div>
         </section>
     </main>
-
+    <script src="script.js"></script>
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -125,6 +148,5 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>

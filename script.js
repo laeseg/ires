@@ -312,6 +312,147 @@ tooltips.forEach(tooltip => {
     });
 });
 
+// Gestion des menus déroulants
+document.addEventListener('DOMContentLoaded', function() {
+    // Gestion du menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    }
+
+    // Gestion des menus déroulants
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        // Gestion du clic sur le toggle
+        if (toggle) {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isActive = dropdown.classList.contains('active');
+                
+                // Fermer tous les autres dropdowns
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) {
+                        d.classList.remove('active');
+                    }
+                });
+                
+                // Toggle le dropdown actuel
+                dropdown.classList.toggle('active');
+            });
+        }
+    });
+
+    // Fermer les dropdowns quand on clique en dehors
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+
+    // Gestion de la navigation au clavier
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        const items = menu ? menu.querySelectorAll('a') : [];
+        
+        if (toggle && items.length) {
+            toggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                    if (dropdown.classList.contains('active')) {
+                        items[0].focus();
+                    }
+                }
+            });
+
+            items.forEach((item, index) => {
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        if (index < items.length - 1) {
+                            items[index + 1].focus();
+                        }
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        if (index > 0) {
+                            items[index - 1].focus();
+                        } else {
+                            toggle.focus();
+                        }
+                    } else if (e.key === 'Escape') {
+                        e.preventDefault();
+                        dropdown.classList.remove('active');
+                        toggle.focus();
+                    }
+                });
+            });
+        }
+    });
+});
+
+// Gestion de la connexion/déconnexion
+function handleAuth(action) {
+    if (action === 'login') {
+        window.location.href = 'login.html';
+    } else if (action === 'logout') {
+        // Ajoutez ici la logique de déconnexion
+        localStorage.removeItem('user');
+        window.location.href = 'index.html';
+    }
+}
+
+// Vérifie si l'utilisateur est connecté
+function checkAuthStatus() {
+    const user = localStorage.getItem('user');
+    const authDropdown = document.querySelector('.auth-dropdown');
+    
+    if (user) {
+        // Utilisateur connecté
+        authDropdown.innerHTML = `
+            <span class="dropdown-toggle">
+                <i class="fas fa-user-circle"></i>
+                <span>${JSON.parse(user).name}</span>
+                <i class="fas fa-chevron-down"></i>
+            </span>
+            <div class="dropdown-menu">
+                <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-divider"></div>
+                <a href="#" onclick="handleAuth('logout')">
+                    <i class="fas fa-power-off"></i> Déconnexion
+                </a>
+            </div>
+        `;
+    } else {
+        // Utilisateur non connecté
+        authDropdown.innerHTML = `
+            <span class="dropdown-toggle">
+                <i class="fas fa-user-circle"></i>
+                <span>Compte</span>
+                <i class="fas fa-chevron-down"></i>
+            </span>
+            <div class="dropdown-menu">
+                <a href="#" onclick="handleAuth('login')">
+                    <i class="fas fa-sign-in-alt"></i> Connexion
+                </a>
+            </div>
+        `;
+    }
+}
+
+// Vérifie le statut de connexion au chargement de la page
+document.addEventListener('DOMContentLoaded', checkAuthStatus);
+
 // Gestion du menu mobile
 document.addEventListener('DOMContentLoaded', function() {
     // Diaporama
@@ -349,15 +490,93 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         });
 
-        document.addEventListener('click', function(e) {
-            if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
-                mainNav.classList.remove('active');
+        // Fermer le menu quand on clique sur un lien
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
+        // Fermer le menu quand on clique en dehors
+        document.addEventListener('click', function(event) {
+            if (!mainNav.contains(event.target) && !menuToggle.contains(event.target) && mainNav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
             }
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Fonction pour marquer le lien actif
+    function setActivePage() {
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.split('/').pop() || 'index.html';
+        
+        // Retirer la classe active de tous les liens
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Trouver et activer le bon lien
+        document.querySelectorAll('.main-nav a:not(.dropdown-toggle)').forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+            
+            const linkPage = href.split('/').pop();
+            
+            if (linkPage === currentPage || 
+                (currentPage === '' && linkPage === 'index.html') ||
+                (currentPage === 'index.html' && linkPage === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Appliquer l'état actif au chargement
+    setActivePage();
+
+    // Gérer les clics sur les liens
+    document.querySelectorAll('.main-nav a:not(.dropdown-toggle)').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (!this.getAttribute('href').startsWith('#')) {
+                document.querySelectorAll('.main-nav a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
+
+    // Gérer les toggles de dropdown
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const dropdown = this.closest('.dropdown');
+            const wasActive = dropdown.classList.contains('active');
+            
+            // Fermer tous les dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            
+            // Réouvrir celui-ci s'il n'était pas actif
+            if (!wasActive) {
+                dropdown.classList.add('active');
+            }
+        });
+    });
+
+    // Fermer les dropdowns au clic en dehors
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+        }
+    });
 });
