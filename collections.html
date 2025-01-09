@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
-    <title>IRES</title>
+    <title>Collections - IRES</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +24,7 @@
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="collections.html">Collections</a></li>
-                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="publication.html">Publications</a></li>
                     <li><a href="#about">À propos</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">
@@ -43,84 +46,188 @@
                             <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown icon-dropdown">
-                        <a href="#" class="dropdown-toggle nav-icon">
-                            <i class="fas fa-cog"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#settings"><i class="fas fa-sliders-h"></i> Paramètres</a></li>
-                            <li><a href="#help"><i class="fas fa-question-circle"></i> Aide</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero" style="background-image: url('images/library-bg.jpg');">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>Explorez nos revues académiques</h1>
-                <div class="search-wrapper">
-                    <form class="search-form">
-                        <div class="search-input-wrapper">
-                            <input type="text" class="search-input" placeholder="Rechercher dans les revues...">
-                            <button type="submit" class="search-button">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+    <main class="collections-page">
+        <div class="collections-header">
+            <div class="header-background">
+                <img src="images/library-bg.jpg" alt="Library Background" class="bg-image active">
+                <img src="images/library-bg1.jpg" alt="Library Background" class="bg-image">
+                <div class="overlay"></div>
             </div>
-        </section>
-
-        <section class="journals-section">
             <div class="container">
-                <div class="filters">
+                <h1>Collections</h1>
+                <div class="collections-filters">
                     <div class="filter-group">
-                        <label>Trier par:</label>
-                        <select>
-                            <option>Plus récent</option>
-                            <option>Plus ancien</option>
-                            <option>Alphabétique</option>
+                        <label for="year">Année:</label>
+                        <select id="year">
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>Discipline:</label>
-                        <select>
-                            <option>Toutes les disciplines</option>
-                            <option>Sciences sociales</option>
-                            <option>Sciences naturelles</option>
-                            <option>Technologie</option>
+                        <label for="type">Type:</label>
+                        <select id="type">
+                            <option value="all">Tous les types</option>
+                            <option value="article">Article</option>
+                            <option value="review">Revue</option>
+                            <option value="thesis">Thèse</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="journals-grid">
-                    <!-- Exemple de carte de revue -->
-                    <article class="journal-card">
-                        <div class="journal-image">
-                            <img src="images/journal-cover.jpg" alt="Couverture de la revue">
-                        </div>
-                        <div class="journal-content">
-                            <h3>Revue Congolaise des Sciences</h3>
-                            <p class="journal-info">Vol. 35, No. 2 (2023)</p>
-                            <p class="journal-description">Une revue scientifique dédiée à la recherche en sciences naturelles et appliquées.</p>
-                            <a href="#" class="journal-link">Voir les articles <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    <!-- Répéter pour d'autres revues -->
-                </div>
-
-                <div class="pagination">
-                    <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
-                    <span class="page-number">Page 1 sur 5</span>
-                    <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+                    <div class="filter-group search">
+                        <input type="text" placeholder="Rechercher dans les collections..." id="search">
+                        <button type="button" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <div class="container">
+            <div class="collections-grid">
+                <!-- Article Example 1 -->
+                <article class="collection-item">
+                    <div class="article-cover">
+                        <img src="images/library-bg.jpg" alt="Cover image" class="cover-image">
+                        <div class="article-type">Article</div>
+                    </div>
+                    <div class="article-content">
+                        <h2 class="article-title">
+                            <a href="#">L'impact des mouvements syndicaux sur les réformes sociales en Europe</a>
+                        </h2>
+                        <div class="article-meta">
+                            <span class="authors">Jean Dupont, Marie Martin, Pierre Lambert</span>
+                            <span class="date">Publié le 15 décembre 2023</span>
+                        </div>
+                        <p class="article-abstract">
+                            Cette étude examine l'influence des mouvements syndicaux sur l'évolution des politiques sociales en Europe occidentale au cours des dernières décennies...
+                        </p>
+                        <div class="article-footer">
+                            <div class="tags">
+                                <span class="tag">Syndicalisme</span>
+                                <span class="tag">Europe</span>
+                                <span class="tag">Politique sociale</span>
+                            </div>
+                            <div class="metrics">
+                                <span class="citations" title="Citations">
+                                    <i class="fas fa-quote-right"></i> 12
+                                </span>
+                                <span class="downloads" title="Téléchargements">
+                                    <i class="fas fa-download"></i> 145
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article Example 2 -->
+                <article class="collection-item">
+                    <div class="article-cover">
+                        <img src="images/library-bg1.jpg" alt="Cover image" class="cover-image">
+                        <div class="article-type">Revue</div>
+                    </div>
+                    <div class="article-content">
+                        <h2 class="article-title">
+                            <a href="#">Les transformations du dialogue social à l'ère numérique</a>
+                        </h2>
+                        <div class="article-meta">
+                            <span class="authors">Sophie Bernard, Lucas Moreau</span>
+                            <span class="date">Publié le 10 décembre 2023</span>
+                        </div>
+                        <p class="article-abstract">
+                            Cette revue analyse l'évolution des mécanismes de dialogue social face aux défis posés par la digitalisation du travail...
+                        </p>
+                        <div class="article-footer">
+                            <div class="tags">
+                                <span class="tag">Numérique</span>
+                                <span class="tag">Dialogue social</span>
+                                <span class="tag">Innovation</span>
+                            </div>
+                            <div class="metrics">
+                                <span class="citations" title="Citations">
+                                    <i class="fas fa-quote-right"></i> 8
+                                </span>
+                                <span class="downloads" title="Téléchargements">
+                                    <i class="fas fa-download"></i> 92
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="page-number active">1</span>
+                <span class="page-number">2</span>
+                <span class="page-number">3</span>
+                <span class="page-dots">...</span>
+                <span class="page-number">12</span>
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Équipe</a></li>
+                        <li><a href="#">Partenaires</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Aide</h4>
+                    <ul>
+                        <li><a href="#">Guide d'utilisation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Accessibilité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> larseg@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +243 816 920 221</li>
+                        <li><i class="fas fa-phone"></i> +243 821 694 240</li>
+                        <li><i class="fas fa-map-marker-alt"></i> B.P. 127 Kinshasa XI</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IRES UNIKIN. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

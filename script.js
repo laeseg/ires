@@ -580,3 +580,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Image switching for collections header
+    const headerImages = document.querySelectorAll('.header-background .bg-image');
+    if (headerImages.length > 1) {
+        let currentImageIndex = 0;
+        setInterval(() => {
+            headerImages[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % headerImages.length;
+            headerImages[currentImageIndex].classList.add('active');
+        }, 5000); // Switch every 5 seconds
+    }
+});

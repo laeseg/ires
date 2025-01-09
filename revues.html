@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+    <title>Revues - IRES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpeg" alt="IRES Logo" class="logo-image">
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="publication.html">Publications</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Contributeurs
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#editeurs">Éditeurs</a></li>
+                            <li><a href="#auteurs">Auteurs</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown icon-dropdown">
+                        <a href="#" class="dropdown-toggle nav-icon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#profile"><i class="fas fa-user-circle"></i> Profile</a></li>
+                            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+                            <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="collections-page">
+        <div class="collections-header">
+            <div class="header-background">
+                <img src="images/library-bg1.jpg" alt="Library Background" class="bg-image active">
+                <div class="overlay"></div>
+            </div>
+            <div class="container">
+                <h1>Revues</h1>
+                <div class="collections-filters">
+                    <div class="filter-group">
+                        <label for="year">Année:</label>
+                        <select id="year">
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                    <div class="filter-group search">
+                        <input type="text" placeholder="Rechercher dans les revues..." id="search">
+                        <button type="button" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Équipe</a></li>
+                        <li><a href="#">Partenaires</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Aide</h4>
+                    <ul>
+                        <li><a href="#">Guide d'utilisation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Accessibilité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> larseg@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +243 816 920 221</li>
+                        <li><i class="fas fa-phone"></i> +243 821 694 240</li>
+                        <li><i class="fas fa-map-marker-alt"></i> B.P. 127 Kinshasa XI</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IRES UNIKIN. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

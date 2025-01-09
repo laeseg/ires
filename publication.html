@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+    <title>IRES</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpeg" alt="IRES Logo" class="logo-image">
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="publication.html">Publications</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Contributeurs
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#editeurs">Éditeurs</a></li>
+                            <li><a href="#auteurs">Auteurs</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown icon-dropdown">
+                        <a href="#" class="dropdown-toggle nav-icon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#profile"><i class="fas fa-user-circle"></i> Profile</a></li>
+                            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+                            <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-page">
+            <!-- Sidebar avec filtres -->
+            <aside class="filters-sidebar">
+                <div class="filter-section">
+                    <h3><i class="fas fa-lock"></i> Type d'accès</h3>
+                    <ul class="filter-list">
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                Accès libre
+                                <span class="filter-count">2,456</span>
+                            </label>
+                        </li>
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                Accès restreint
+                                <span class="filter-count">3,789</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter-section">
+                    <h3><i class="fas fa-file-alt"></i> Type de contenu</h3>
+                    <ul class="filter-list">
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                Articles scientifiques
+                                <span class="filter-count">4,123</span>
+                            </label>
+                        </li>
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                Thèses doctorales
+                                <span class="filter-count">892</span>
+                            </label>
+                        </li>
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                Revues académiques
+                                <span class="filter-count">1,230</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter-section">
+                    <h3><i class="fas fa-calendar-alt"></i> Date de publication</h3>
+                    <ul class="filter-list">
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                2020 - 2025
+                                <span class="filter-count">3,567</span>
+                            </label>
+                        </li>
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                2015 - 2019
+                                <span class="filter-count">2,890</span>
+                            </label>
+                        </li>
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                2010 - 2014
+                                <span class="filter-count">1,923</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter-section">
+                    <h3><i class="fas fa-globe"></i> Langue</h3>
+                    <ul class="filter-list">
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                Français
+                                <span class="filter-count">4,567</span>
+                            </label>
+                        </li>
+                        <li class="filter-item">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-checkbox">
+                                Anglais
+                                <span class="filter-count">2,813</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Contenu principal -->
+            <div class="main-content">
+                <div class="search-box-container">
+                    <div class="search-input-group">
+                        <input type="text" class="search-input" placeholder="Rechercher par titre, auteur, mot-clé..." value="développement économique">
+                        <button class="search-button">
+                            <i class="fas fa-search"></i> Rechercher
+                        </button>
+                    </div>
+                    <a href="#" class="advanced-search-link">
+                        <i class="fas fa-sliders-h"></i> Recherche avancée
+                    </a>
+                </div>
+
+                <div class="results-header">
+                    <div class="results-count">
+                        <i class="fas fa-file-alt"></i>
+                        <strong>6,245</strong> résultats pour "développement économique"
+                    </div>
+                    <select class="sort-select">
+                        <option value="relevance">Trier par pertinence</option>
+                        <option value="date-desc">Plus récent d'abord</option>
+                        <option value="citations">Nombre de citations</option>
+                        <option value="title">Titre (A-Z)</option>
+                    </select>
+                </div>
+
+                <div class="results-list">
+                    <!-- Article 1 -->
+                    <article class="result-item">
+                        <a href="#" class="result-title">Développement Économique en Afrique : Analyse des Politiques d'Innovation</a>
+                        <div class="result-authors">
+                            <i class="fas fa-users"></i>
+                            Par Prof. Amadou Diallo, Dr. Sarah Kouassi
+                        </div>
+                        <div class="result-meta">
+                            <i class="fas fa-book"></i>
+                            Revue Africaine d'Économie (2024) Vol. 18, No. 1
+                            <span class="access-badge free">
+                                <i class="fas fa-unlock"></i> Accès libre
+                            </span>
+                        </div>
+                        <p class="result-abstract">
+                            Cette étude examine les politiques d'innovation et leur impact sur le développement économique 
+                            en Afrique subsaharienne. L'analyse porte sur les données de 15 pays entre 2010 et 2023, 
+                            révélant des corrélations significatives entre l'investissement dans l'innovation et la 
+                            croissance économique.
+                        </p>
+                        <div class="result-actions">
+                            <a href="#" class="result-action-btn primary">
+                                <i class="fas fa-book-reader"></i> Lire
+                            </a>
+                            <button class="result-action-btn save">
+                                <i class="fas fa-bookmark"></i> Sauvegarder
+                            </button>
+                            <button class="result-action-btn cite">
+                                <i class="fas fa-quote-right"></i> Citer
+                            </button>
+                            <button class="result-action-btn">
+                                <i class="fas fa-download"></i> PDF
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="result-item">
+                        <a href="#" class="result-title">L'Impact des Technologies Numériques sur la Croissance Économique en RDC</a>
+                        <div class="result-authors">
+                            <i class="fas fa-users"></i>
+                            Par Dr. Jean-Pierre Mukendi, Prof. Marie Ntumba
+                        </div>
+                        <div class="result-meta">
+                            <i class="fas fa-book"></i>
+                            Journal of Digital Economics (2023) Vol. 12, No. 4
+                            <span class="access-badge restricted">
+                                <i class="fas fa-lock"></i> Accès restreint
+                            </span>
+                        </div>
+                        <p class="result-abstract">
+                            Cette recherche analyse l'impact de la transformation numérique sur la croissance économique 
+                            en République Démocratique du Congo. Les résultats montrent une corrélation positive entre 
+                            l'adoption des technologies numériques et le développement des secteurs clés de l'économie.
+                        </p>
+                        <div class="result-actions">
+                            <a href="#" class="result-action-btn primary">
+                                <i class="fas fa-book-reader"></i> Lire
+                            </a>
+                            <button class="result-action-btn save">
+                                <i class="fas fa-bookmark"></i> Sauvegarder
+                            </button>
+                            <button class="result-action-btn cite">
+                                <i class="fas fa-quote-right"></i> Citer
+                            </button>
+                            <button class="result-action-btn">
+                                <i class="fas fa-download"></i> PDF
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Équipe</a></li>
+                        <li><a href="#">Partenaires</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Aide</h4>
+                    <ul>
+                        <li><a href="#">Guide d'utilisation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Accessibilité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> larseg@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +243 816 920 221</li>
+                        <li><i class="fas fa-phone"></i> +243 821 694 240</li>
+                        <li><i class="fas fa-map-marker-alt"></i> B.P. 127 Kinshasa XI</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IRES UNIKIN. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
